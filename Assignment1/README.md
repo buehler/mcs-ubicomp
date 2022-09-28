@@ -23,9 +23,10 @@ The the JS wrappers are also there.
 
 2. To test on a native system:
 
-`make clean ; make
-./espruino
--> then type Infxl.model() -> should return 1`
+`make clean ; make`
+Once the build completes, try running the espruino locally:
+`./espruino`
+-> then at the >> prompt type `Infxl.model()` this should return 1
 
 3. Now, you need to build the firmware for the NRF52 chip which is on the Puck. For this:
 
