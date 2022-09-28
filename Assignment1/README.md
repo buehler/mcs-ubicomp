@@ -18,7 +18,7 @@ You will need to use the wrapper functions to pass the accelerometer data to it.
 
 1. Clone the repository a Linux/Mac machine. 
 
-The model is found in the `\lib\misc\infxl.*` files. 
+The model is found in the `\libs\misc\infxl.*` files. 
 The JS wrappers are also there. 
 
 2. To test on a native system:
