@@ -1,24 +1,28 @@
 # Energy-conscious Deployment of ML Model
 
 ## Overview
+
 In this exercise, you will try out two strategies for using a pre-trained Artificial Neural Network which can recognize three specific gestures sensed by an accelerometer. The model can detect up-down motion, sideways motion, and other (called random).
 
 We are using the Puck.js device which can be programmed using the Espruino framework.
 
 
 ## Variant-1: Model runs on Puck.js
+
 The original model was developed in C, using an [infXL toolchain](https://cloud.infxl.com/). 
-Porting this to JavaScript would have significant performance issues due to its high memory requirements. 
-Embedding it as inline C code within JS is also problematic for the same reason. 
-We have integrated the infXL model in a modified Espruino software library, found [here](https://github.com/Interactions-HSG/UbiComp-Espruino).
+Embedding it as inline C code within JS would have significant performance issues due to its high memory requirements.
+The pre-trained model has been kept in C and integrated the infXL model in a modified Espruino software library, found [here](https://github.com/Interactions-HSG/UbiComp-Espruino).
+You will need to use the wrapper functions to pass the accelerometer data to it.
 
 ### Compiling custom Espruino firmware 
 
 1. Clone the repositoy a Linux/Mac machine. 
+
 The model is found in the `\lib\misc\infxl.*` files. 
 The the JS wrappers are also there. 
 
 2. To test on a native system:
+
 `make clean ; make
 ./espruino
 -> then type Infxl.model() -> should return 1`
@@ -34,6 +38,7 @@ This should create a Zip file.
 5. Put Puck.js into DFU mode: Disconnect power (pull out the battery), then while keeping button pressed, insert the battery. Release button as soon as the led turns blue. It is now in DFU mode.
 
 6. Start the NRF Connect app and scan. You will see "Puck DFU" listed. Connect, go to DFU tab, and select the zip file to upload. 
+
 It takes few minutes to upload. Don't fiddle with anything - if the firmware update is interupted the device will get bricked.
 
 7. After the upload is done, power off the puck and power on again. This returns the devices to normal BLE mode.
@@ -46,10 +51,12 @@ It takes few minutes to upload. Don't fiddle with anything - if the firmware upd
 
 
 ## Variant-2: Model runs on a browser application
+
 The main code that runs on your WebBrowser is visible in the [code](js_model/). 
 This code has a function getData, which scrapes the data from the WebBLE UART service. 
 The accelerometer data is then passed on to the classification model, and optionally to a graphical plot.
-`
+
+```
   function getData() {
     UART.eval('dumpData()', function(response) {
 		document.getElementById("sensordata").value = response;
@@ -59,11 +66,12 @@ The accelerometer data is then passed on to the classification model, and option
 		doClassification(data);
     });
   }
-`
+```
 
 To summarize:
+
 0. When `UART.eval` is called the WebBluetooth javascript asks you to connect to a BLE device which is advertising UART service (which, Puck is doing)
 1. The javascript function uses the WebBluetooth UART connection to the Puck to invoke a method called `dumpData` (see [code](puck_js/)).
 2. The software on the Puck.js should send the measurements (20 samples of 3 values - i.e. 60 elements) in a comma separated string via the JS console.
 3. The raw data is passed to the javascript version of the NN model and the result is obtained.
-4. (Optional) The raw data is displayed in a chart in the html.
+4. (Optional) The raw data is displayed in a chart in the html. Compare the execution time of the JS model to the C model.
