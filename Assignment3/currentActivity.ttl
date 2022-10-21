@@ -9,6 +9,7 @@
 @prefix a3: <https://solid.interactions.ics.unisg.ch/kimPod/gazeData/currentActivity.ttl> .
 
 <https://solid.interactions.ics.unisg.ch/kimPod/gazeData/currentActivity.ttl> a prov:Activity, schema:ReadAction;
+                                                                              schema:name "Read action"^^xsd:string;
                                                                               prov:wasAssociatedWith <https://solid.interactions.ics.unisg.ch/kimPod/profile/card#me>;
                                                                               prov:used <https://solid.interactions.ics.unisg.ch/kimPod/gazeData/kimTest1.csv>;
                                                                               prov:endedAtTime "2022-10-14T02:02:02Z"^^xsd:dateTime;
