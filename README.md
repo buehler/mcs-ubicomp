@@ -11,11 +11,9 @@ gestures.
 ## Assignment 2: Gaze-based Augmented Reality
 
 In this assignment, students gain experience working with gaze-based AR.
-Concretely, you will build a system that, in Task 1, can learn how to 
-estimate activities from eye tracking data (offline, i.e., from existing data). 
-In Task 2, the system should be able to work with online data and estimate 
-user activity within a time frame. Following the activity recognition, 
-in Task 3, the system should be able to provide contextual suggestions on an AR display.
+Concretely, students build a system that can learn how to estimate activities 
+from eye tracking data and, following the activity recognition, can provide 
+contextual suggestions on an AR display.
 
 
 ## Assignment 3: Decentralized Data Handling
