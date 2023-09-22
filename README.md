@@ -1,4 +1,4 @@
-# 2022-HS-MCS-UbiComp-Public
+# 2023-HS-MCS-UbiComp-Public
 This is the public repo for the MCS UbiComp Course
 
 ## Assignment 1: Onboard vs Offboard Data Analytics
