@@ -1,11 +1,9 @@
 # 2023-HS-MCS-UbiComp-Public
-This is the public repo for the MCS UbiComp Course
+This is the public repo for the MCS UbiComp Course. The code provided here is intented as a starting point for each assignment.
 
 ## Assignment 1: Onboard vs Offboard Data Analytics
 
-In this assignment, students use a Puck.js
-device and a pre-trained ML model to classify device movements as one of three
-gestures.
+In this assignment, students use a Puck.js device and a pre-trained ML model to classify device movements as one of three gestures.
 
 
 ## Assignment 2: Gaze-based Augmented Reality
