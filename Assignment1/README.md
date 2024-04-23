@@ -53,7 +53,7 @@ It takes few minutes to upload. Don't fiddle with anything - if the firmware upd
 
 ## Variant-2: Model runs on a browser application
 
-The main code that runs on your WebBrowser is visible in the [code](js_model/). 
+The main code that runs on your WebBrowser is visible in the [code](offboard_version/). 
 This code has a function getData, which scrapes the data from the WebBLE UART service. 
 The accelerometer data is then passed on to the classification model, and optionally to a graphical plot.
 
