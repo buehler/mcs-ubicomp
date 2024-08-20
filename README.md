@@ -1,4 +1,4 @@
-# 2023-HS-MCS-UbiComp-Public
+# 2024-HS-MCS-UbiComp-Public
 This is the public repo for the MCS UbiComp Course. The code provided here is intented as a starting point for each assignment.
 
 ## Assignment 1: Onboard vs Offboard Data Analytics
@@ -20,3 +20,7 @@ contextual suggestions on an AR display.
 In this assignment, students interact with a SoLiD server, 
 create their own Pod, share resources (data) with others, 
 and create a Mixed Reality application that uses such resources.
+
+
+## Contact
+If you have any questions about any assignment feel free to contact Jannis [jannisrene.strecker@unisg.ch](mailto:jannisrene.strecker@unisg.ch).
