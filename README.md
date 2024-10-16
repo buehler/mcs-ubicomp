@@ -17,7 +17,7 @@ contextual suggestions on an AR display.
 ## Assignment 3: Decentralized Data Handling
 
 
-In this assignment, students interact with a SoLiD server, 
+In this assignment, students interact with a Solid server, 
 create their own Pod, share resources (data) with others, 
 and create a Mixed Reality application that uses such resources.
 
