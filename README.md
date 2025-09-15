@@ -1,4 +1,4 @@
-# 2024-HS-MCS-UbiComp-Public
+# 2025-HS-MCS-UbiComp-Public
 This is the public repo for the MCS UbiComp Course. The code provided here is intented as a starting point for each assignment.
 
 ## Assignment 1: Onboard vs Offboard Data Analytics
@@ -23,4 +23,4 @@ and create a Mixed Reality application that uses such resources.
 
 
 ## Contact
-If you have any questions about any assignment feel free to contact Jannis [jannisrene.strecker@unisg.ch](mailto:jannisrene.strecker@unisg.ch).
+If you have any questions about any assignment feel free to contact Jannis [jannis.strecker-bischoff@unisg.ch](mailto:jannis.strecker-bischoff@unisg.ch).
