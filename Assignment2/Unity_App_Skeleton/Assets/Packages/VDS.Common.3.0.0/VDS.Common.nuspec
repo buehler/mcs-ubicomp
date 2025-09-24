@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>VDS.Common</id>
+    <version>3.0.0</version>
+    <title>VDS.Common</title>
+    <authors>RobVesse,kal_ahmed</authors>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <readme>ReadMe.md</readme>
+    <projectUrl>https://www.dotnetrdf.org/</projectUrl>
+    <description>A library containing useful data structures like Trees, Tries, Sparse Arrays, Bloom Filters and indexing tailored dictionaries.</description>
+    <tags>Data Structures Tree Trie Binary AVL Scapegoat Dictionary Collections Sparse Arrays Bloom Filters Enumerations Comparers</tags>
+    <repository type="git" url="https://github.com/dotnetrdf/vds-common" commit="30d982820239dd6f1ed623f3866aa7fac860b8ea" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

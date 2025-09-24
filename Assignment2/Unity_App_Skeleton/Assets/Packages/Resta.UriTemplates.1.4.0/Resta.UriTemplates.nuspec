@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>Resta.UriTemplates</id>
+    <version>1.4.0</version>
+    <authors>Pavel Shkarin</authors>
+    <owners>Pavel Shkarin</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">MIT</license>
+    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>
+    <projectUrl>https://github.com/a7b0/uri-templates</projectUrl>
+    <description>.NET implementation of the URI template spec (RFC6570). Supports up to level 4 template expressions.</description>
+    <copyright>Copyright © NetBike 2013</copyright>
+    <tags>URI HTTP REST</tags>
+    <repository type="git" url="https://github.com/a7b0/uri-templates.git" commit="82423d4182d429a4671de37c0f81e37a7f74abc2" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>
