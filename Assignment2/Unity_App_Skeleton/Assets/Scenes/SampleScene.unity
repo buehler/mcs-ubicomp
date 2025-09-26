@@ -249,7 +249,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3785382597210309509, guid: cab08bc4dfecdd843a81efeccd095895, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.7015
+      value: 1.6536
       objectReference: {fileID: 0}
     - target: {fileID: 3785382597210309509, guid: cab08bc4dfecdd843a81efeccd095895, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -322,7 +322,19 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2513924216301428535, guid: cab08bc4dfecdd843a81efeccd095895, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 4966423399097959183, guid: cab08bc4dfecdd843a81efeccd095895, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 8005743922358374849, guid: cab08bc4dfecdd843a81efeccd095895, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
+    - targetCorrespondingSourceObject: {fileID: 3987022460500581670, guid: cab08bc4dfecdd843a81efeccd095895, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 0}
   m_SourcePrefab: {fileID: 100100000, guid: cab08bc4dfecdd843a81efeccd095895, type: 3}
 --- !u!1 &331733494 stripped
 GameObject:
@@ -1035,7 +1047,7 @@ PrefabInstance:
     - target: {fileID: 436838976204946983, guid: c8017e7ab018af2499f57589a0b894a4, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
     - target: {fileID: 1264910338768197909, guid: c8017e7ab018af2499f57589a0b894a4, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0

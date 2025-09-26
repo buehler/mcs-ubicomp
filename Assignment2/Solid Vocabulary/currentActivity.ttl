@@ -9,9 +9,9 @@
 
 <https://solid.interactions.ics.unisg.ch/jPod/gazeData/currentActivity.ttl> a prov:Activity, schema:ReadAction;
                                                                               schema:name "Read action"^^xsd:string;
-                                                                              prov:wasAssociatedWith <https://solid.interactions.ics.unisg.ch/LukaPod/profile/card#me>;
-                                                                              prov:used <https://solid.interactions.ics.unisg.ch/LukaPod/gazeData/lukaTest1.csv>;
-                                                                              prov:endedAtTime "2022-10-14T02:02:02Z"^^xsd:dateTime;
+                                                                              prov:wasAssociatedWith <https://solid.interactions.ics.unisg.ch/jannis_ubicomp25/profile/card#me>;
+                                                                              prov:used <https://solid.interactions.ics.unisg.ch/jannis_ubicomp25/gazeData/my_gaze_data.csv>;
+                                                                              prov:endedAtTime "2024-10-14T02:02:02Z"^^xsd:dateTime;
                                                                               bm:probability  "0.87"^^xsd:float.
 <https://solid.interactions.ics.unisg.ch/jPod/profile/card#me> a foaf:Person, prov:Agent;
                                                                  foaf:name "Jannis";
