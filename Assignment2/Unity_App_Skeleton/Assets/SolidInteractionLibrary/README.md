@@ -1,4 +1,4 @@
-This project folder contains the C# library at /SolidInteractionLibrary to interact with solid Pods from a [Community Solid Server](https://communitysolidserver.github.io/CommunitySolidServer/latest/). The folder SolidInteractionConsoleApp contains an example program to showcase how to use the library.
+This project folder contains the C# library at /SolidInteractionLibrary to interact with solid Pods from a [Community Solid Server](https://communitysolidserver.github.io/CommunitySolidServer/latest/). 
 
 The library allows users to authenticate and interact with their private pods without user input. It does not follow the usual flow of OIDC authentication, which includes redirecting to the identity provider in the browser. Instead it uses the client credentials flow described [here](https://communitysolidserver.github.io/CommunitySolidServer/latest/usage/client-credentials/) for JavaScript.
 
@@ -11,15 +11,11 @@ Install the following packages in your Unity project using [NuGet for Unity](htt
 - System.IdentityModel.Tokens.Jwt
 - System.Security.Permissions
 
-### Solid Server
+(This should be already part of the provided Unity app)
 
-start a Community Solid Server, for example locally on port 3000 with
+### Interact with the Solid Server
 
-```bash
-$ npx @solid/community-server
-```
-
-We create an account
+To create an account
 
 ```csharp
 AuthenticationHeaderValue authHeader = await SolidClient.CreateAccount(serverUrl, email, password);
@@ -31,7 +27,7 @@ or login to an existing account
 AuthenticationHeaderValue authHeader = await AuthenticatedPodClient.LoginAsync(serverUrl, email, password);
 ```
 
-Then we create a pod if we didn't already create one.
+Then to create a pod if you didn't already create one:
 
 ```csharp
 await SolidClient.CreatePod(serverUrl, podName, authHeader);
@@ -103,9 +99,11 @@ await foreach (var message in authenticatedClient.SubscribeToResource("http://lo
 
 ## Adding the library to a Unity project
 
+The Library is already in the Assets folder.
+To use it, simply add `using SolidInteractionLibrary;` on top of a file.
+See the file `SolidTestScriptForUnity.cs` in Scripts/ for an example of how to use the library.
+
+Alternatively add it manually:
 First, add [NuGetForUnity](https://github.com/GlitchEnzo/NuGetForUnity) to your Unity proejct. Add packages System.Text.Json, System.IdentityModel.Tokens.Jwt, Microsoft.IdentityModel, Microsoft.IdentityModel.Tokens with NuGet.
 Drag the SolidInteractionLibrary folder into the Assets folder in Unity. Make sure to delete any possible obj folder in SolidInteractionLibrary.
 
-## Testing the library with Unity
-
-Start a community solid server on localhost 3000 by running community-solid-server in the command line. Import the[TestScriptForUnity.cs](TestScriptForUnity.cs) script to Unity and add it to e.g. a Button. Finally, run the Unity project and click the button and check the Console.
