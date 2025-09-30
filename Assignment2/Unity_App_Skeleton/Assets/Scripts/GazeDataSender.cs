@@ -42,7 +42,7 @@ public class GazeDataSender : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DesktopURL = "http://10.2.2.172:5000"; // default value
+        DesktopURL = "https://10.2.2.172:5000"; // default value will be changed by application
         _noChunkSentYet = true;
         LastSendingTime = DateTime.UtcNow;
 
