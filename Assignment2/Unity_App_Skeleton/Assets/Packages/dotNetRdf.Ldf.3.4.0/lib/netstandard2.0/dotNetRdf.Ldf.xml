@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>dotNetRdf.Ldf</name>
+    </assembly>
+    <members>
+        <member name="T:VDS.RDF.LDF.Client.TpfLiveGraph">
+            <summary>
+            A <see cref="T:VDS.RDF.IGraph">graph</see> that dispatches all operations to a Triple Pattern Fragments (TPF) endpoint.
+            </summary>
+            <remarks>
+            <para>Caution: All operations on this graph lead to (potentially numerous) network requests. This presents complexity characteristics that are very different from those you might expect from in-memory implementations of the <see cref="T:VDS.RDF.IGraph">interface</see>.</para>
+            <para>
+            This graph, like LDF itself, does not support
+            <list type="bullet">
+            <item>blank nodes,</item>
+            <item>quoted triples or</item>
+            <item>mutation.</item>
+            </list>
+            </para>
+            </remarks>
+            <exception cref="T:VDS.RDF.LDF.LdfException">Throw under various circumstances to represent operations that are illigal in the context of LDF or when this client is not compatible with the response from the LDF endpoint.</exception>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.#ctor(System.Uri,VDS.RDF.IRdfReader,VDS.RDF.Parsing.Loader)">
+            <summary>
+            Initializes a new instance of the <see cref="T:VDS.RDF.LDF.Client.TpfLiveGraph"/> class.
+            </summary>
+            <param name="baseUri">The URI of the TPF endpoint used to obtain triples.</param>
+            <param name="reader">(Optional) The reader to be used for parsing LDF responses (Turtle by default).</param>
+            <param name="loader">(Optional) The loader to be used when sending LDF requests (<see cref="T:VDS.RDF.Parsing.Loader"/> by default).</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="baseUri"/> is <see langword="null"/>.</exception>
+            <remarks>When this constructor is called, a network request will be sent to gather the LDF metadata.</remarks>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Equals(VDS.RDF.IGraph,System.Collections.Generic.Dictionary{VDS.RDF.INode,VDS.RDF.INode}@)">
+            <summary>
+            Determines whether this graph is equal to the <paramref name="other"/> graph.
+            </summary>
+            <param name="other">Graph to test for equality.</param>
+            <param name="mapping">Always <see langword="null"/> because Linked Data Fragments does not support blank nodes.</param>
+            <returns>Whether this graph is equal to the <paramref name="other"/> graph.</returns>
+            <remarks>
+            <para>LDF graphs are equal to each other if their search templates are the same.</para>
+            <para>An LDF graph might be equal to other graph types if they contain the same triples.</para>
+            <para>Caution: Comparing LDF graphs to other types of graphs requires enumerating all statements in the LDF graph, which potentially involves numerous network requests.</para>
+            </remarks>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Assert(VDS.RDF.Triple)">
+            <summary>
+            This graph cannot assert a triple because Linked Data Fragments does not support mutation.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Nothing.</returns>
+            <exception cref="T:System.NotSupportedException">Always.</exception>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Assert(System.Collections.Generic.IEnumerable{VDS.RDF.Triple})">
+            <summary>
+            This graph cannot assert triples because Linked Data Fragments does not support mutation.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Nothing.</returns>
+            <exception cref="T:System.NotSupportedException">Always.</exception>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Clear">
+            <summary>
+            This graph cannot be cleared because Linked Data Fragments does not support mutation.
+            </summary>
+            <exception cref="T:System.NotSupportedException">Always.</exception>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Merge(VDS.RDF.IGraph)">
+            <summary>
+            This graph cannot merge another because Linked Data Fragments does not support mutation.
+            </summary>
+            <param name="_">Ignored.</param>
+            <exception cref="T:System.NotSupportedException">Always.</exception>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Merge(VDS.RDF.IGraph,System.Boolean)">
+            <summary>
+            This graph cannot merge another because Linked Data Fragments does not support mutation.
+            </summary>
+            <param name="_">Ignored.</param>
+            <param name="__">Ignored.</param>
+            <exception cref="T:System.NotSupportedException">Always.</exception>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Retract(VDS.RDF.Triple)">
+            <summary>
+            This graph cannot retract a triple because Linked Data Fragments does not support mutation.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Nothing.</returns>
+            <exception cref="T:System.NotSupportedException">Always.</exception>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Retract(System.Collections.Generic.IEnumerable{VDS.RDF.Triple})">
+            <summary>
+            This graph cannot retract triples because Linked Data Fragments does not support mutation.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Nothing.</returns>
+            <exception cref="T:System.NotSupportedException">Always.</exception>
+        </member>
+        <member name="P:VDS.RDF.LDF.Client.TpfLiveGraph.AllQuotedNodes">
+            <summary>
+            This graph returns no quoted nodes because Linked Data Fragments does not support RDF*.
+            </summary>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.ContainsQuotedTriple(VDS.RDF.Triple)">
+            <summary>
+            This graph does not contain any quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>False.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetBlankNode(System.String)">
+            <summary>
+            This graph returns no blank nodes because Linked Data Fragments does not support blank nodes.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Null.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuoted(VDS.RDF.INode)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuoted(System.Uri)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithObject(System.Uri)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithObject(VDS.RDF.INode)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicate(System.Uri)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicate(VDS.RDF.INode)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubject(System.Uri)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubject(VDS.RDF.INode)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubjectPredicate(VDS.RDF.INode,VDS.RDF.INode)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <param name="__">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithSubjectObject(VDS.RDF.INode,VDS.RDF.INode)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <param name="__">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.GetQuotedWithPredicateObject(VDS.RDF.INode,VDS.RDF.INode)">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+            <param name="_">Ignored.</param>
+            <param name="__">Ignored.</param>
+            <returns>Empty.</returns>
+        </member>
+        <member name="P:VDS.RDF.LDF.Client.TpfLiveGraph.QuotedNodes">
+            <summary>
+            This graph returns no quoted nodes because Linked Data Fragments does not support RDF*.
+            </summary>
+        </member>
+        <member name="P:VDS.RDF.LDF.Client.TpfLiveGraph.QuotedTriples">
+            <summary>
+            This graph returns no quoted triples because Linked Data Fragments does not support RDF*.
+            </summary>
+        </member>
+        <member name="M:VDS.RDF.LDF.Client.TpfLiveGraph.Dispose(System.Boolean)">
+            <inheritdoc />
+        </member>
+        <member name="P:VDS.RDF.LDF.Client.TpfTripleCollection.Count">
+            <remarks>Caution: When the LDF response has no triple count statement in the metadata section, then every invocation of this property enumerates the collection which potentially involves numerous network requests.</remarks>
+        </member>
+        <member name="T:VDS.RDF.LDF.LdfException">
+            <summary>
+            This exception represents errors that occur while working with Linked Data Fragments.
+            </summary>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:VDS.RDF.LDF.LdfException.#ctor(System.String)">
+            <summary>
+            This exception represents errors that occur while working with Linked Data Fragments.
+            </summary>
+            <param name="message">The error message.</param>
+        </member>
+    </members>
+</doc>
